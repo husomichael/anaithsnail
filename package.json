@@ -3,5 +3,24 @@
     "discord.js": "^11.6.4",
     "dotenv": "^16.0.1",
     "puppeteer": "^16.2.0"
-  }
+  },
+  "name": "anaithsnail",
+  "description": "asdf",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/husomichael/anaithsnail.git"
+  },
+  "author": "Michael Huso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/husomichael/anaithsnail/issues"
+  },
+  "homepage": "https://github.com/husomichael/anaithsnail#readme"
 }
