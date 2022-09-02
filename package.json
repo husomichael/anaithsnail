@@ -8,7 +8,7 @@
   "description": "asdf",
   "version": "1.0.0",
   "type": "module",
-  "main": "anaithsnail.js",
+  "main": "src/anaithsnail.js",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
