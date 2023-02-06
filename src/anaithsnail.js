@@ -7,12 +7,15 @@ const config = {
     serverId: process.env.SERVER_ID,
     textChannelID: process.env.TEXT_CHANNEL_ID,
     voiceChannelID: process.env.VOICE_CHANNEL_ID,
+    discordEmail: process.env.DISCORD_EMAIL,
+    discordPassword: process.env.DISCORD_PASSWORD,
     browser: {
         headless: false,
         userDataDir: './data',
         defaultViewport: null,
         executablePath: process.env.CHROME_PATH,
         devtools: true,
+        args: [`--window-size=${process.env.WIDTH},${process.env.HEIGHT}`],
     },
 };
 export const client = new Discord.Client();

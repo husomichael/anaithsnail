@@ -3,11 +3,26 @@ import {
     enableVideoButton,
     friendRequests,
     playTogether,
-    voiceChannelSelector
+    voiceChannelSelector,
+    continueInBrowserButton,
+    logInButton,
+    discordInputEmail,
+    discordInputPassword,
+    discordEmail,
+    discordPassword,
 } from "./selectors.js";
 
+export async function loginToDiscord(discordEmail, discordPassword) {
+    await discordPage.evaluate(
+        v => document.querySelector(v).click(),
+        logInButton,
+    );
+    // await discordPage.$eval(discordInputEmail, el => el.value = discordEmail);
+    // await discordPage.$eval(discordPassword, el => el.value = process.env.DISCORD_PASSWORD);
+}
+
 export async function playPlex() {
-    // Play shared video on plex.
+    // Join shared video on plex.
     await plexPage.waitForSelector(playTogether, {
         timeout: 0,
     });
@@ -16,7 +31,7 @@ export async function playPlex() {
         playTogether,
     );
 
-    // join discord channel
+    // Join discord channel
     await discordPage.waitForSelector(voiceChannelSelector, {
         timeout: 0,
     });
@@ -36,7 +51,7 @@ export async function playPlex() {
 }
 
 export async function addFriends() {
-    //new friends tab
+    //new tab for plex friends
     const friendsPage = await browser.newPage();
 
     //go to plex friends

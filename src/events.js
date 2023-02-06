@@ -1,16 +1,17 @@
-import {addFriends, playPlex} from "./commands.js";
+import {addFriends, playPlex, loginToDiscord} from "./commands.js";
 import {client, discordPage, plexPage} from "./anaithsnail.js";
-import {config} from "dotenv";
 
 export async function onReady() {
     console.log(`Logged in as ${client.user.tag}!`);
 
     //Open discord in a browser.
-    await discordPage.goto(`https://discord.com/channels/${config.serverId}`, {
+    await discordPage.goto(`https://discord.com/login`, {
         waitUntil: 'networkidle0',
     });
+    //Log into discord.
+    await loginToDiscord();
 
-    //Open Plex
+    //Open plex in a browser.
     await plexPage.goto(`https://app.plex.tv/desktop/#!/`, {
         waitUntil: `networkidle0`,
     });
@@ -32,4 +33,3 @@ export async function onMessage(msg) {
             break;
     }
 }
-

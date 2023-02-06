@@ -1,6 +1,5 @@
 //Plex Selectors
 import { config } from "dotenv";
-
 export const
     menu = 'span[class="_11ni0ce12 _11ni0ce9 _11ni0ce4e' +
         ' _11ni0ce1m _11ni0ce2a _11ni0ce2e' +
@@ -18,4 +17,10 @@ export const
         ' ihlo9k7"]',
     // Discord Selectors
     voiceChannelSelector = `a[data-list-item-id="channels___${config.voiceChannelID}"]`,
-    enableVideoButton = 'button[aria-label="Share Your Screen"]';
+    enableVideoButton = 'button[aria-label="Share Your Screen"]',
+    continueInBrowserButton = 'div[class="contents-3ca1mk"]',
+    logInButton = `button[class="button-f2h6uQ lookFilled-yCfaCM colorPrimary-2AuQVo sizeMedium-2bFIHr grow-2sR_-F"]`,
+    discordInputEmail = `input[class="inputDefault-Ciwd-S input-3O04eu inputField-2RZxdl"]`,
+    discordInputPassword = `input[class="inputDefault-Ciwd-S input-3O04eu"]`,
+    discordEmail = `${config.discordEmail}`,
+    discordPassword = `${config.discordPassword}`;
