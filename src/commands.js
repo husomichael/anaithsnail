@@ -1,4 +1,4 @@
-import {browser, discordPage, plexPage} from "./anaithsnail.js";
+import { getDiscordPage, getPlexPage } from "./anaithsnail.js";
 import {
     enableVideoButton,
     friendRequests,
@@ -13,6 +13,7 @@ import {
 } from "./selectors.js";
 
 export async function loginToDiscord(discordEmail, discordPassword) {
+    const discordPage = await getDiscordPage();
     await discordPage.evaluate(
         v => document.querySelector(v).click(),
         logInButton,
@@ -22,6 +23,8 @@ export async function loginToDiscord(discordEmail, discordPassword) {
 }
 
 export async function playPlex() {
+    const discordPage = await getDiscordPage();
+    const plexPage = await getPlexPage();
     // Join shared video on plex.
     await plexPage.waitForSelector(playTogether, {
         timeout: 0,
@@ -51,6 +54,7 @@ export async function playPlex() {
 }
 
 export async function addFriends() {
+    const plexPage = await getPlexPage();
     //new tab for plex friends
     const friendsPage = await browser.newPage();
 

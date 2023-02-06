@@ -1,5 +1,7 @@
 //Plex Selectors
-import { config } from "dotenv";
+import { getConfig } from './anaithsnail';
+
+const config = getConfig();
 export const
     menu = 'span[class="_11ni0ce12 _11ni0ce9 _11ni0ce4e' +
         ' _11ni0ce1m _11ni0ce2a _11ni0ce2e' +
