@@ -1,7 +1,10 @@
 import {addFriends, playPlex, loginToDiscord} from "./commands.js";
-import {client, discordPage, plexPage} from "./anaithsnail.js";
+import { getDiscordClient, getDiscordPage } from "./anaithsnail.js";
 
 export async function onReady() {
+    const discordPage = await getDiscordPage();
+    const client = getDiscordClient();
+
     console.log(`Logged in as ${client.user.tag}!`);
 
     //Open discord in a browser.
